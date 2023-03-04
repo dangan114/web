@@ -1,16 +1,15 @@
 import React from "react";
-import CardDeck from 'react-bootstrap/CardDeck';
 import Card from 'react-bootstrap/Card';
 import './CardComp.css';
 
-const CardComp = props => (
+function CardComp(props) {
 
     <section className="introduction">
         <div className="header">
             <h3>Welcome To CTTDVNATL</h3>
         </div>
         <div className="row content">
-        <CardDeck>
+        <>
             <Card>
             <a href="/home">
                     <Card.Img src="./images/internal.jpg" />
@@ -38,10 +37,9 @@ const CardComp = props => (
                     <Card.Text>Started at the end of 2018 and finish at the end of 2019.</Card.Text>
                 </Card.Body>
             </Card>
-        </CardDeck>
+        </>
         </div>
     </section>
-
-)
+}
 
 export default CardComp;

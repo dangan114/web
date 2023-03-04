@@ -1,11 +1,11 @@
 import React from "react";
 import './mass-schedule.css';
-import Jumbotron from 'react-bootstrap/Jumbotron';
+// import Jumbotron from 'react-bootstrap/Jumbotron';
 
 const ScheduleComp = () => (
 
     <section className="mass_schedule">
-        <Jumbotron fluid>
+        <div>
             <h1>Our Mass Schedule</h1>
             <div className="row">
                 <dl>
@@ -25,7 +25,7 @@ const ScheduleComp = () => (
                     <dd>11:30 AM</dd>
                  </dl>
             </div>
-        </Jumbotron>
+        </div>
     </section>
 )
 

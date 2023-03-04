@@ -2,8 +2,9 @@ import React from "react";
 import Carousel from 'react-bootstrap/Carousel';
 import "./style.css";
 
-const CarouselComp = () => (
-    <div>
+function CarouselComp() {
+    return (
+        <div>
         <Carousel>
             <Carousel.Item>
                 <img
@@ -42,6 +43,7 @@ const CarouselComp = () => (
             </Carousel.Item>
         </Carousel>
     </div>
-)
+    )
+}
 
 export default CarouselComp;

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import ContactForm from '../components/ContactForm'
 import Map from '../components/Map'
 import ContactList from '../components/ContactList'
@@ -26,26 +26,21 @@ const CardWrapper = styled.div`
   }
 `
 
-export default class Contact extends Component {
-  componentDidMount() {
-    //This is to handle login or fetch info
-  }
+export default function Contact() {
+  return (
+    <ContactWrapper>
+      <CardWrapper>
+        <ContactForm />
+      </CardWrapper>
 
-  render() {
-    return (
-      <ContactWrapper>
-        <CardWrapper>
-          <ContactForm />
-        </CardWrapper>
+      <CardWrapper>
+        <Map />
+      </CardWrapper>
 
-        <CardWrapper>
-          <Map />
-        </CardWrapper>
-
-        <CardWrapper>
-          <ContactList />
-        </CardWrapper>
-      </ContactWrapper>
-    )
-  }
+      <CardWrapper>
+        <ContactList />
+      </CardWrapper>
+    </ContactWrapper>
+  )
+  
 }

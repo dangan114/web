@@ -6,20 +6,20 @@ import { Menu, Drawer } from 'antd';
 
 const breakpoint = 600
 
-class MainMenu extends Component {
-    state = {
+function MainMenu() {
+    const state = {
         isOpenDrawer: false
     }
 
-    onShowDrawer = () => {
+    const onShowDrawer = () => {
         this.setState({ isOpenDrawer: true })
     }
 
-    onCloseDrawer = () => {
+    const onCloseDrawer = () => {
         this.setState({ isOpenDrawer: false })
     }
 
-    buildMenu = (isMobile) => (
+    const buildMenu = (isMobile) => (
         <Menu mode={`${isMobile ? 'inline' : 'horizontal'}`} className="menu">
             <Menu.Item className="menu-item">
                 <Link to="/Home">HOME</Link>
@@ -33,29 +33,27 @@ class MainMenu extends Component {
         </Menu>
     )
 
-    render() {
-        return (
-            <div className="menu-container">
-                <MediaQuery minWidth={breakpoint + 1}>
-                    {this.buildMenu(false)}
-                </MediaQuery>
+    return (
+        <div className="menu-container">
+            <MediaQuery minWidth={breakpoint + 1}>
+                {this.buildMenu(false)}
+            </MediaQuery>
 
-                <MediaQuery maxWidth={breakpoint}>
-                    <div className="drawer-handle" onClick={this.onShowDrawer}>
-                        <i className="fas fa-bars"/>
-                    </div>
-                    <Drawer
-                        placement='left'
-                        closable={false}
-                        onClose={this.onCloseDrawer}
-                        visible={this.state.isOpenDrawer}
-                    >
-                        {this.buildMenu(true)}
-                    </Drawer>
-                </MediaQuery>
-            </div>
-        )
-    }
+            <MediaQuery maxWidth={breakpoint}>
+                <div className="drawer-handle" onClick={this.onShowDrawer}>
+                    <i className="fas fa-bars"/>
+                </div>
+                <Drawer
+                    placement='left'
+                    closable={false}
+                    onClose={this.onCloseDrawer}
+                    visible={this.state.isOpenDrawer}
+                >
+                    {this.buildMenu(true)}
+                </Drawer>
+            </MediaQuery>
+        </div>
+    )
     
 }
 
